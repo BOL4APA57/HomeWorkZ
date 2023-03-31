@@ -25,3 +25,17 @@
 # Формат вывода соответствует примеру.
 # Переменные и функции имеют значимые имена, не только a, b, c, d.
 
+import random
+
+# def start
+def list(count):
+    ls = []
+    for _ in range(count):
+        ls.append(round(random.uniform(5, 10), 2))
+    return ls
+
+# def end
+
+first, second = list(20), list(20)
+winners = [first[i] if first[i] >= second[i] else second[i] for i in range(20)]
+print(f"Первая команда: {first}\nВторая команда: {second}\n \nПобедители тура: {winners}")

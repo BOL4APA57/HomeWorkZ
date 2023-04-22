@@ -39,3 +39,5 @@ def list(count):
 first, second = list(20), list(20)
 winners = [first[i] if first[i] >= second[i] else second[i] for i in range(20)]
 print(f"Первая команда: {first}\nВторая команда: {second}\n \nПобедители тура: {winners}")
+
+#todo генерировать команды необходимо при помощи листкомпрехеншонс, а не функцией

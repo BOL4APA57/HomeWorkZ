@@ -44,8 +44,9 @@ def crypt(s, step):
 upp = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
 low = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
 
-task, move = input("Введите сообщение: "), int(input("Введите сдвиг: "))
+task, move = input("Введите сообщение: "), int(input("Введите сдвиг: ")) #ЛОПНИМОИГЛАЗА!
 ans = ""
 for char in task:
     ans += str(crypt(char, move))
 print("Зашифрованное сообщение:", ans)
+#ЗачОт

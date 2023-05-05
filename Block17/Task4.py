@@ -19,3 +19,5 @@ stroka = input("Введите строку: ").split()
 for i in range(len(stroka)):
     stroka[i] = stroka[i].capitalize()
 print("Результат:", *stroka)
+
+#TODO в цикле проще перебирать сразу элементы, а не обращаться к ним по индексу

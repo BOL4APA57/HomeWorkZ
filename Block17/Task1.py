@@ -21,3 +21,5 @@
 menu = input("Доступное меню: ").split(";")
 menu = ", ".join(menu)
 print("Сейчас в меню есть:", menu)
+
+#зачОт

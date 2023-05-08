@@ -35,15 +35,18 @@
 
 stroka = input("Введите строку: ").split(" ")
 sym = ".,!?:;"
-for i in range(len(stroka)):
-    if stroka[i][-1] in sym:
-        stroka[i] = stroka[i][:len(stroka[i]) - 1]
-
-long = stroka[0]
+long = ""
 for s in stroka:
+    if s[-1] in sym:
+        pos = stroka.index(s)
+        s = stroka.pop(pos)[:len(s)-1]
+        stroka.insert(pos, s)
     if len(long) < len(s):
         long = s
+
 print(f"Самое длинное слово: «{long}».\nДлина этого слова: {len(long)} символ(-ов).")
 
-#TODO в первом цикле проще перебирать сразу символы, а не обращаться к индексу,
+# TO DO в первом цикле проще перебирать сразу символы, а не обращаться к индексу,
 # это жрет меньше процессорного времении памяти
+
+# Remake

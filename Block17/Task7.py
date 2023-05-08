@@ -37,22 +37,23 @@
 # Формат вывода соответствует примеру.
 # Переменные и функции имеют значимые имена, не только a, b, c, d.
 
-check = 0
-while check != 4:
+check = False
+while not check:
     ip = input("Введите IP: ").split(".")
-    check = 0
+    check = False
     if len(ip) != 4:
         print("Ошибка! Адрес — это четыре числа, разделённые точками.")
     else:
-        for test in ip:
-            if not test.isnumeric():
-                print("Ошибка!", test, "— это не целое число.")
-            elif int(test) > 255:
-                print(f"Ошибка! Число должно лежать в диапазоне от 0 до 255.\n{test} превышает 255.")
+        if not ip[0].isnumeric() or not ip[1].isnumeric() or not ip[2].isnumeric() or not ip[3].isnumeric():
+            print("Ошибка! Один из элементов — это не целое число.")
+        elif int(ip[0]) > 255 or int(ip[1]) > 255 or int(ip[2]) > 255 or int(ip[3]) > 255:
+            print(f"Ошибка! Каждое число в адресе должно лежать в диапазоне от 0 до 255.")
 
-            else:
-                check += 1
+        else:
+            check += 1
 else:
     print("IP-адрес корректен.")
 
-#TODO можно решить эту задачу, не используя вложенный цикл
+# TO DO можно решить эту задачу, не используя вложенный цикл
+
+# Так?

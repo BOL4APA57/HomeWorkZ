@@ -16,8 +16,16 @@
 # Переменные и функции имеют значимые имена, не только a, b, c, d.
 
 stroka = input("Введите строку: ").split()
-for i in range(len(stroka)):
-    stroka[i] = stroka[i].capitalize()
-print("Результат:", *stroka)
+# for i in range(len(stroka)):
+#     stroka[i] = stroka[i].capitalize()
+result = []
 
-#TODO в цикле проще перебирать сразу элементы, а не обращаться к ним по индексу
+for s in stroka:
+    s = result.append(s.capitalize())
+print("Результат:", *result)
+
+# TO DO в цикле проще перебирать сразу элементы, а не обращаться к ним по индексу
+
+# Хоть по мне и странно, что так выгоднее. Но...
+# Remake
+

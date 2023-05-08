@@ -32,9 +32,9 @@
 
 
 up = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-password = input("Придумайте пароль: ")
-check = 0
-while check == 0:
+check = False
+while not check:
+    password = input("Придумайте пароль: ")
     numcheck, upcheck = 0, False
     for s in password:
         if s in up:
@@ -44,10 +44,12 @@ while check == 0:
 
     if len(password) > 8 and upcheck and numcheck >= 3:
         print("Это надёжный пароль.")
-        check += 1
+        check = True
     else:
         print("Пароль ненадёжный. Попробуйте ещё раз.")
-        password = input("Придумайте пароль: ")
 
-#TODO строка password = input("Придумайте пароль: ") встречается в коде дважды, можно сделать так,
+
+# TO DO строка password = input("Придумайте пароль: ") встречается в коде дважды, можно сделать так,
 # чтобы она не повторялась, а то моветон-с)
+
+# Done

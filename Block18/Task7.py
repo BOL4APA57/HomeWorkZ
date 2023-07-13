@@ -60,3 +60,4 @@ mnog = {i for i in array_1}
 set_pos = set.intersection(mnog, array_2, array_3)
 set_neg = set.difference(mnog, array_2, array_3)
 print("\nРешение c множеством.\nЗадача 1:", *set_pos,"\nЗадача 2:", *set_neg)
+#зачОт

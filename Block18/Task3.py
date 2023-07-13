@@ -78,3 +78,4 @@ for item in goods:
         summ_q += ask["quantity"]
         summ_p += ask["quantity"] * ask["price"]
     print(f"{item} - {summ_q} штук(и), стоимость {summ_p} руб.")
+#зачОт

@@ -78,3 +78,4 @@ for i in range(1, maxfr + 1):
             if data[s] == i:
                 rev_data[i].append(s)
         print(i, ":", rev_data[i])
+#зачОт

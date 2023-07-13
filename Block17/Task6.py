@@ -20,16 +20,18 @@
 # Переменные и функции имеют значимые имена, не только a, b, c, d.
 
 stroka = input("Введите строку: ") + " "
-i, result = 0, ""
-while i < len(stroka) - 1:
-    count = 1
-    result += stroka[i]
-    while stroka[i] == stroka[i + 1]:
-        count += 1
-        i += 1
-    else:
-        i += 1
-    result += str(count)
-print("Закодированная строка:", result)
+# i, result = 0, ""
+# while i < len(stroka) - 1:
+#     count = 1
+#     result += stroka[i]
+#     while stroka[i] == stroka[i + 1]:
+#         count += 1
+#         i += 1
+#     else:
+#         i += 1
+#     result += str(count)
+# print("Закодированная строка:", result)
 
-#TODO зачОт, но перебирать строку по индексу - ну прям правда плохо
+
+
+# TO DO зачОт, но перебирать строку по индексу - ну прям правда плохо

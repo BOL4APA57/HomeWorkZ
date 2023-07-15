@@ -35,6 +35,28 @@
 # Формат вывода соответствует примеру.
 # Переменные и функции имеют значимые имена, не только a, b, c, d.
 
+# violator_songs = {
+#     'World in My Eyes': 4.86,
+#     'Sweetest Perfection': 4.43,
+#     'Personal Jesus': 4.56,
+#     'Halo': 4.9,
+#     'Waiting for the Night': 6.07,
+#     'Enjoy the Silence': 4.20,
+#     'Policy of Truth': 4.76,
+#     'Blue Dress': 4.29,
+#     'Clean': 5.83
+# }
+#
+# count = int(input("Сколько песен выбрать? "))
+# sound = 0
+# for i in range(count):
+#     track = input("Введите название песни: ")
+#     while track not in violator_songs:
+#         track = input("Такой песни нет в списке! \nПовторите ввод: ")
+#     sound += violator_songs[track]
+# print(f"Общее время звучания песен: {sound} минут(-ы)")
+#ЗачОт
+
 violator_songs = {
     'World in My Eyes': 4.86,
     'Sweetest Perfection': 4.43,
@@ -47,11 +69,13 @@ violator_songs = {
     'Clean': 5.83
 }
 
-count, sound = int(input("Сколько песен выбрать? ")), 0
-for i in range(count):
+count = int(input("Сколько песен выбрать? "))
+sound, replay = 0, 0
+while replay < count:
     track = input("Введите название песни: ")
-    while track not in violator_songs:
-        track = input("Такой песни нет в списке! \nПовторите ввод: ")
-    sound += violator_songs[track]
+    if track not in violator_songs:
+        print("Такой песни нет в списке! \nПовторите ввод! ")
+    else:
+        sound += violator_songs[track]
+        replay += 1
 print(f"Общее время звучания песен: {sound} минут(-ы)")
-#ЗачОт

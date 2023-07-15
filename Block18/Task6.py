@@ -86,3 +86,43 @@ for men in sorted(table):
     print("\n", men)
     for food in table[men]:
         print(f"{food}: {table[men][food]}")
+
+
+#TODO я знаю, ты такое не любишь, но:
+# вот код мой, он опитимальнее с точки зрения обращения по индексам и не создает дублирующихся записей,
+# увеличивая количество уже имеющихся заказов
+
+# # order_dict = {}
+#
+# while True:
+#     order_count = int(input('Введите кол-во заказов: '))
+#     if order_count <= 0:
+#         print('Должен быть хотя бы один заказ!\n')
+#     else:
+#         break
+#
+# count = 1
+#
+# # Т.к. отсутствуют какие-либо проверки ввода, в данном случае, лучше подойдёт цикл for.
+# #  Количество строк кода будет меньше, избавимся от переменной count и лишних вычислений с ней.
+# while order_count >= count:
+#     new_order = input(f'{count} заказ: ').split()
+#
+#     customer, order, piz_count = new_order[0], new_order[1], int(new_order[2])
+#
+#     if not customer in order_dict:
+#         order_dict[customer] = dict({order: piz_count})
+#     elif order in order_dict[customer]:
+#         order_dict[customer][order] += piz_count
+#     else:
+#         order_dict[customer][order] = piz_count
+#     count += 1
+#
+# print()
+#
+# for member in sorted(order_dict.keys()):
+#     print(f'{member}:')
+#     for order in sorted(order_dict[member].keys()):
+#         print(f'        {order}: {order_dict[member][order]}')
+
+

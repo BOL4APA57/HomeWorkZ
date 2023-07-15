@@ -43,27 +43,46 @@
 # Формат вывода соответствует примеру (перед названием пиццы пять пробелов).
 # Переменные и функции имеют значимые имена, не только a, b, c, d.
 
+# table = {}
+# count = int(input("Введите количество заказов: "))
+# for i in range(count):
+#     order = input("Введите заказ: ")
+#     person = order[:order.index(" ")]
+#     pizza = order[order.index(" ") + 1:order.rindex(" ")]
+#     num = int(order[order.rindex(" "):])
+#
+#     if person in table and pizza in table[person]:
+#        table[person][pizza] += num
+#     elif person in table and pizza not in table[person]:
+#         table[person][pizza] = num
+#     else:
+#         table[person] = {}
+#         table[person][pizza] = num
+#
+# print("\nСписок заказов:")
+# for men in sorted(table):
+#     print("\n", men)
+#     for food in table[men]:
+#         print(f"{food}: {table[men][food]}")
+
+# TO DO аналогично предыдущему заданию: очень усложнен ввод заказа, обращение внутри словаря идет по индексам,
+# что не есть хорошо. Смысл задачи в том, что нужно создать два словаря с, где значение первого будет ключем для второго
+
 table = {}
 count = int(input("Введите количество заказов: "))
 for i in range(count):
     order = input("Введите заказ: ")
-    person = order[:order.index(" ")]
-    pizza = order[order.index(" ") + 1:order.rindex(" ")]
-    num = int(order[order.rindex(" "):])
-
-    if person in table and pizza in table[person]:
-       table[person][pizza] += num
-    elif person in table and pizza not in table[person]:
-        table[person][pizza] = num
+    details = order.split()
+    if details[0] in table and details[1] in table[details[0]]:
+        table[details[0]][details[1]] += int(details[2])
+    elif details[0] in table and details[1] not in table[details[0]]:
+        table[details[0]][details[1]] = int(details[2])
     else:
-        table[person] = {}
-        table[person][pizza] = num
+        table[details[0]] = {}
+        table[details[0]][details[1]] = int(details[2])
 
 print("\nСписок заказов:")
 for men in sorted(table):
     print("\n", men)
     for food in table[men]:
         print(f"{food}: {table[men][food]}")
-
-#TODO аналогично предыдущему заданию: очень усложнен ввод заказа, обращение внутри словаря идет по индексам,
-# что не есть хорошо. Смысл задачи в том, что нужно создать два словаря с, где значение первого будет ключем для второго

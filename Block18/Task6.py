@@ -134,3 +134,4 @@ for men in sorted(table):
 #         print(f'        {order}: {order_dict[member][order]}')
 
 
+#зачОт

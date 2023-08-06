@@ -69,17 +69,25 @@
 # что не есть хорошо. Смысл задачи в том, что нужно создать два словаря с, где значение первого будет ключем для второго
 
 table = {}
-count = int(input("Введите количество заказов: "))
+while True:
+    count = int(input("Введите количество заказов: "))
+    if count <= 0:
+        print('Должен быть хотя бы один заказ!\n')
+    else:
+        break
+
 for i in range(count):
     order = input("Введите заказ: ")
     details = order.split()
-    if details[0] in table and details[1] in table[details[0]]:
-        table[details[0]][details[1]] += int(details[2])
-    elif details[0] in table and details[1] not in table[details[0]]:
-        table[details[0]][details[1]] = int(details[2])
+    person, pizza, num = details[0], details[1], details[2]
+
+    if person in table and pizza in table[person]:
+        table[person][pizza] += int(num)
+    elif person in table and pizza not in table[person]:
+        table[person][pizza] = int(num)
     else:
-        table[details[0]] = {}
-        table[details[0]][details[1]] = int(details[2])
+        table[person] = {}
+        table[person][pizza] = int(num)
 
 print("\nСписок заказов:")
 for men in sorted(table):
@@ -88,7 +96,7 @@ for men in sorted(table):
         print(f"{food}: {table[men][food]}")
 
 
-#TODO я знаю, ты такое не любишь, но:
+#TO DO я знаю, ты такое не любишь, но:
 # вот код мой, он опитимальнее с точки зрения обращения по индексам и не создает дублирующихся записей,
 # увеличивая количество уже имеющихся заказов
 

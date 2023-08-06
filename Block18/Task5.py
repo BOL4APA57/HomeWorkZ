@@ -67,21 +67,22 @@ sin = {}
 for i in range(count):
     string = input("Введите пару: ")
     pair = string.split(" - ")
-    sin[pair[0]], sin[pair[1]] = pair[1], pair[0]
+    sin[pair[0].capitalize()], sin[pair[1].capitalize()] = pair[1].capitalize(), pair[0].capitalize()
 
 # Чтобы не получить головняк с поиском по значениям, и потом - выводом ключа, увеличил количество ключей.
 
 check = False
 while not check:
-    word = input("Введите слово: ")
+    word = input("Введите слово: ").capitalize()
     check = False
-    if word.capitalize() in sin:
-        print("Синоним:", sin[word.capitalize()])
+    if word in sin:
+        print("Синоним:", sin[word])
         check = True
     else:
         print("Такого слова в словаре нет.")
 
-#TODO не работает, если мы задаем слово, которе является значением словаряВведите количество пар слов: 2
+#TO DO не работает, если мы задаем слово, которе является значением словаря
+# Введите количество пар слов: 2
 # Введите пару: привет - пока
 # Введите пару: хай - здорова
 # Введите слово:
